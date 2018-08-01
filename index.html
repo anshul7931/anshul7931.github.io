@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+	  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX5yzqfP1onJ2ybhcAK4bUoxx3MHMZysU&callback=initMap"></script>
+      <style>
+		.socialmedia {
+		  display:inline-block;
+		  margin-left:3%;
+		  position: relative;
+		  width: 30%;
+		}
+
+		.socialmediaimage {
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		}
+		
+		.overlay {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  height: 100%;
+		  width: 100%;
+		  opacity: 0;
+		  transition: .5s ease;
+		  background-color: rgba(0, 0, 0, 0.5);;
+		}
+
+		.socialmedia:hover .overlay {
+		  opacity: 1;
+		}
+
+		.socialmediatext {
+		  color: white;
+		  
+		  font-size: 20px;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		}
+		</style>
+	  <style>
+	
+       
+	   
+	    input[type=text], select, textarea {
+			width: 100%; /* Full width */
+			padding: 12px; /* Some padding */  
+			border: 1px solid #ccc; /* Gray border */
+			border-radius: 4px; /* Rounded borders */
+			box-sizing: border-box; /* Make sure that padding and width stays in place */
+			margin-top: 6px; /* Add a top margin */
+			margin-bottom: 16px; /* Bottom margin */
+			resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+	    }
+
+		/* Style the submit button with a specific background color etc */
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		/* When moving the mouse over the submit button, add a darker green color */
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+
+		/* Add a background color and some padding around the form */
+		.container {
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+	   
+    }
+    </style>  
+	  <script>
+				$(document).ready(function(){
+			  $('.slider').slider({full_width: true});
+			});
+			
+			  $(document).ready(function(){
+			  $('.carousel').carousel();
+			});
+			
+			
+			
+			 $(document).ready(function(){
+			$('.collapsible').collapsible();
+		  });    
+	  </script>
+	  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+		  (adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-5237932550675770",
+			enable_page_level_ads: true
+		  });
+		</script>
+</head>
+<body>
+	
+	<div class="slider" ><!-- add fullscreen class to make it full screen-->
+		<ul class="slides">
+		  <li>
+			<img src="https://scontent-sit4-1.xx.fbcdn.net/v/t31.0-8/15000670_1300921896606942_2179701753920580984_o.jpg?oh=271daaf1a1e8eb98859be0610d124963&oe=5A6A8F6C"> 
+			<div class="caption center-align">
+			  <h3>Fashion Trendz!</h3>
+			  <!--h5 class="light grey-text text-lighten-3">Wide variety of products.</h5-->
+			</div>
+		  </li>
+		  <li>
+			<img src="./images/snickers.jpeg"> 
+			<div class="caption left-align">
+			  <h5>Wide range of<br/> </h5>
+			  <h3 class="light grey-text text-lighten-3">Snickers.</h3>
+			</div>
+		  </li>
+		  <li>
+			<img src="./images/goggles.jpeg"> 
+			<div class="caption right-align">
+			<h5>Large variety of</h5>
+			  <h3 class="light grey-text text-lighten-3">Aviators.</h3>
+			</div>
+		  </li>
+		  <li>
+			<img src="./images/airShoes.jpeg"> 
+		   <div class="caption center-align">
+			  <h5>Branded and class range of </h5>
+			  <h3 class="light grey-text text-lighten-3">Shoes.</h3>
+			</div>
+		  </li>
+		</ul>
+	  </div>
+
+	 <div class="carousel">
+		<div align=center> <h3>WE PROVIDE WITH:</h3> </div>
+		<a class="carousel-item" href="#two!"><img src="./images/calvin.jpeg"></a>
+		<a class="carousel-item" href="#two!"><img src="./images/sweatShirt.jpeg"></a>
+		<a class="carousel-item" href="#three!"><img src="./images/tees.jpeg"></a>
+		<a class="carousel-item" href="#four!"><img src="./images/shirts.jpeg"></a>
+		<a class="carousel-item" href="#five!"><img src="./images/womensJacket.jpeg"></a>
+	 </div>
+   
+   <ul class="collapsible" data-collapsible="accordion"><!--in place of accordion if we use expandable then we can open multiple collapsibles-->
+    <li>
+      <div class="collapsible-header"><i class="material-icons">contact_mail</i>Reach us out</div>
+      <div class="collapsible-body">
+			
+		<div class="socialmedia">
+		  <img src="./images/facebook.png" alt="Avatar" class="socialmediaimage">
+		  <div class="overlay">
+			<div class="socialmediatext">
+					<a href="https://www.facebook.com/fabcollectionz21/">https://www.facebook.com/fabcollectionz21/</a><br>
+					<!--a href="https://www.facebook.com/westernStylez/">https://www.facebook.com/westernStylez/</a><br/>
+					<a href="https://www.facebook.com/Fashion-Trendz-1298337320198733/">https://www.facebook.com/Fashion-Trendz-1298337320198733/</a-->
+			</div>
+		  </div>
+		</div>
+	  
+    
+		  <div class="socialmedia">
+		  <img src="./images/whatsapp.png" alt="Avatar" class="socialmediaimage">
+		  <div class="overlay">
+			<div class="socialmediatext">&nbsp;&nbsp;&nbsp;&nbsp;DM on :<br>9814445793</div>
+		  </div>
+		</div>
+		
+		<div class="socialmedia">
+		  <img src="./images/gmail.png" alt="Avatar" class="socialmediaimage">
+		  <div class="overlay">
+			<div class="socialmediatext">fabcollectionz21@gmail.com</div>
+		  </div>
+		</div>
+	  </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Location</div>
+	  <div class="collapsible-body">
+	  <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJH_imbZDuDzkR2AjlbPGYKVE&key=AIzaSyA0RAuw5Bh0mHedWtGOFqYyizfsyluA7M0" frameborder="0" width="100%" height="300px" style="border:0" allowfullscreen=""></iframe>	
+	  </div>	  
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">rate_review</i>Feedback</div>
+      <div class="collapsible-body">
+		    <div class="container">
+				  <form action="mailto:anshul7931@gmail.com">
+
+					<label for="name">Full Name</label>
+					<input type="text" id="name" name="fullname" placeholder="Your name..">
+
+					<label for="phone">Phone Number</label>
+					<input type="text" id="phone" name="phonenumber" placeholder="Your phone number..">
+
+
+					<label for="subject">Feedback</label>
+					<textarea id="feedback" name="feedback" placeholder="Write something.." style="height:200px"></textarea>
+
+					<input type="submit" value="Submit">
+
+				  </form>
+			</div>
+	  </div>
+    </li>
+  </ul>
+
+ </body>
+ </html>
