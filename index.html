@@ -13,13 +13,20 @@
   <link rel="icon" type="image/png" href="img/logo.jpg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <title>Austin Pharmaceuticals</title>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-5237932550675770",
-      enable_page_level_ads: true
-    });
-  </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5237932550675770",
+    enable_page_level_ads: true
+  });
+</script>
   <style>
+    header{
+      background: url(img/tablets.jpg);
+      background-size: cover;
+      background-position: center;
+      min-height: 1000px;
+    }
     @media screen and (max-width: 670px){
       header{
         min-height: 500px;
@@ -50,10 +57,15 @@
         <a href="#" class="sidenav-trigger" data-target="mobile-menu">
           <i class="material-icons">menu</i>
         </a>
+        <ul class="right right hide-on-med-and-up">
+          <li>a</li>
+        </ul>
         <ul class="right right hide-on-med-and-down">
           <li><a href="#whatweprovide">What we Provide</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="list.html">Our Products</a></li>
+          <li><a href="franchise.html">Franchise</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
           <li><a href="#contact">Contact</a></li>
           <!-- <li><a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-position="bottom" data-tooltip="Instagram"> 
             <i class="fab fa-instagram"></i>
@@ -67,46 +79,15 @@
         </ul>
         <ul class="sidenav grey lighten-2" id="mobile-menu">
           <li><a href="#whatweprovide">What we Provide</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="list.html">Our Products</a></li>
+          <li><a href="franchise.html">Franchise</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
-
-  <div class="slider" ><!-- add fullscreen class to make it full screen-->
-		<ul class="slides">
-		  <li>
-			<img src="img/1.jpg"> 
-			<div class="caption center-align">
-			  <h3>Fashion Trendz!</h3>
-			  <!--h5 class="light grey-text text-lighten-3">Wide variety of products.</h5-->
-			</div>
-		  </li>
-		  <li>
-			<img src="img/2.jpg"> 
-			<div class="caption left-align">
-			  <h5>Wide range of<br/> </h5>
-			  <h3 class="light grey-text text-lighten-3">Snickers.</h3>
-			</div>
-		  </li>
-		  <li>
-			<img src="img/3.jpg"> 
-			<div class="caption right-align">
-			<h5>Large variety of</h5>
-			  <h3 class="light grey-text text-lighten-3">Aviators.</h3>
-			</div>
-		  </li>
-		  <li>
-			<img src="img/4.jpg"> 
-		   <div class="caption center-align">
-			  <h5>Branded and class range of </h5>
-			  <h3 class="light grey-text text-lighten-3">Shoes.</h3>
-			</div>
-		  </li>
-		</ul>
-	  </div>
-
 
   <!-- photo / grid -->
   <section class="container section scrollspy" id="whatweprovide">
@@ -227,54 +208,55 @@
           role to mark a distinguished position in the market.</p>
       </div>
       <div class="col s12 l5 offset-l2">
-          <form method="POST" action="https://script.google.com/macros/s/AKfycbz-q7Y_L4cvj9IoTsZjaLotNViiigv1GUa_MnWcvw/exec" target="formDestination" onsubmit="this.submit();this.reset(); return false;">
-            <div class="input-field">
-                <i class="material-icons prefix">person</i>
-                <input name="name" type="text" id="name" required>
-                <label for="name">Your Name</label>
-            </div>
-            <div class="input-field">
-              <i class="material-icons prefix">phone</i>
-              <input name="phone" type="text" id="phone" required>
-              <label for="phone">Your Phone</label>
-            </div>
-            <div class="input-field">
-              <i class="material-icons prefix">email</i>
-              <input name="email" type="email" id="email" required>
-              <label for="email">Your Email</label>
-            </div>
-            <div class="input-field">
-              <i class="material-icons prefix">message</i>
-              <textarea name="message" id="message" class="materialize-textarea" cols="20" rows="20" required></textarea>
-              <label for="message">Your Message</label>
-            </div>
-            
-            <div class="input-field">
-              <p>Collaborations:</p>
-              <p>
-                <label>
-                  <input name="Collaborations" type="checkbox" value="Franchise">
-                  <span>Franchise</span>
-                </label>
-              </p>
-              <p>
-                <label>
-                  <input name="Collaborations" type="checkbox" value="Join us">
-                  <span>Join Us</span>
-                </label>
-              </p>
-              <p>
-                  <label>
-                    <input name="Collaborations" type="checkbox" value="TPM">
-                    <span>Third Party Manufacturing</span>
-                  </label>
-                </p>
-            </div>
-            <div class="input-field center">
-              <input type="submit" class="btn" value="Submit">
-            </div>
-          </form>
-      <iframe name="formDestination" class="hide"></iframe>
+        <form method="POST" action="https://script.google.com/macros/s/AKfycbz-q7Y_L4cvj9IoTsZjaLotNViiigv1GUa_MnWcvw/exec"
+          target="formDestination" onsubmit="this.submit();this.reset(); return false;">
+          <div class="input-field">
+            <i class="material-icons prefix">person</i>
+            <input name="name" type="text" id="name" required>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">phone</i>
+            <input name="phone" type="text" id="phone" required>
+            <label for="phone">Your Phone</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">email</i>
+            <input name="email" type="email" id="email" required>
+            <label for="email">Your Email</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">message</i>
+            <textarea name="message" id="message" class="materialize-textarea" cols="20" rows="20" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+
+          <div class="input-field">
+            <p>Collaborations:</p>
+            <p>
+              <label>
+                <input name="Collaborations" type="checkbox" value="Franchise">
+                <span>Franchise</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="Collaborations" type="checkbox" value="Join us">
+                <span>Join Us</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="Collaborations" type="checkbox" value="TPM">
+                <span>Third Party Manufacturing</span>
+              </label>
+            </p>
+          </div>
+          <div class="input-field center">
+            <input type="submit" class="btn" value="Submit">
+          </div>
+        </form>
+        <iframe name="formDestination" class="hide"></iframe>
       </div>
     </div>
   </section>
@@ -324,16 +306,14 @@
     </div>
   </footer>
 
-  <div data-include="contact.html"></div>
-
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script> 
-      $(document).ready(function () {
-        $("#includedContent").load("contact.html"); 
-      });
-  </script> 
+  <script>
+    $(document).ready(function () {
+      $("#includedContent").load("contact.html");
+    });
+  </script>
   <script>
     $(document).ready(function () {
 
@@ -348,12 +328,9 @@
       $('.tooltipped').tooltip();
       $('.scrollspy').scrollSpy();
       $('.carousel').carousel();;
-      $('.slider').slider({full_width: true});
 
     });
   </script>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
 </body>
 
 </html>
