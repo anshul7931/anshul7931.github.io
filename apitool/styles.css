@@ -5,3 +5,7 @@ body {
 #colorWhite {
    color: azure;
 }
+.mainContainer {
+    text-align:center;
+    padding-top: 20%;
+}

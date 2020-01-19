@@ -16,14 +16,19 @@ var theURL = "https://jsonplaceholder.typicode.com/posts";
 
 //Updating the default URL with the input URL
 function getURL(){
-    theURL = document.getElementById("url").value;
+    if(document.getElementById("url")!=null){
+        theURL = document.getElementById("url").value;
+    }
     console.log(theURL)
 }
 
 //Service call for get
 function getServiceCall(){
+    getURL();
     var client = new HttpClient();
-    client.get(theURL, (response)=> console.log("response") );
+    client.get(theURL, (err,response)=> {
+        console.log("response") 
+    });
 }
 
 //Performance test runner
