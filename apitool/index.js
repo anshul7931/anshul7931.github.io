@@ -6,6 +6,24 @@ var HttpClient = function() {
             if(aHttpRequest.readyState == 4 && aHttpRequest.status==200)
                 aCallback(aHttpRequest.responseText);
             }
+          
+            aHttpRequest.onload = () => {
+                console.log(`Data Loaded: ${aHttpRequest.status} ${aHttpRequest.response}`);
+            };
+            
+            // listen for `error` event
+            aHttpRequest.onerror = () => {
+                console.error('Request is failed.Please check for the issue.');
+            }
+            
+            // listen for `progress` event
+            aHttpRequest.onprogress = (event) => {
+                // event.loaded returns how many bytes are downloaded
+                // event.total returns the total number of bytes
+                // event.total is only available if server sends `Content-Length` header
+                console.log(`Downloaded ${event.loaded} of ${event.total}`);
+            }
+         
             aHttpRequest.open("GET",aUrl,true);
             aHttpRequest.send(null);
         }
