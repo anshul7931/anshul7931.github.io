@@ -7,12 +7,14 @@ $(document).ready(function(){
             var table_data = '<table id="coronaData" class="table table-bordered table-striped">';
 
             table_data += `
-                    <tr>
-                        <th scope="col">Province</th>
-                        <th scope="col">Country</th>
-                        <th scope="col">Total cases</th>
-                        <th scope="col">Cases reported today</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th scope="col">Province</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Total cases</th>
+                            <th scope="col">Cases reported today</th>
+                        </tr>
+                    </thead>
             `
 
             var totalCases = 0;
@@ -71,7 +73,7 @@ function csvJSON(csv){
   }
 
   function search_table(value){
-    $("#coronaData tr").each(function(){
+    $("#coronaData tbody tr").each(function(){
         var found = 'false';
         $(this).each(function(){
             if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0){
