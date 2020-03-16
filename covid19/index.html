@@ -10,10 +10,13 @@
 	
 		<h1>Coronavirus Tracker</h1>
 		<div class="jumbotron">
-		  <!-- <h1 class="display-4" th:text="${totalReportedCases}"></h1> -->
-		  <p class="lead">Below are all reported cases across the world</p>
+		  <h1 class="display-4" id="totalCases"></h1>
+		  <p class="lead">Total cases across the globe</p>
+		  <p> Below data may not be accurate upto 6 to 8 hours</p>
 		</div>
 	
+		<input type="text" name="search" id="search" class="form-control" placeholder="Search here..."/>
+		</br></br>
         <div id="coronaTable">
 
         </div>

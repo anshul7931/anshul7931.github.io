@@ -4,7 +4,7 @@ $(document).ready(function(){
         dataType:"text",
         success:function(data){
             var results = JSON.parse(csvJSON(data));
-            var table_data = '<table class="table table-bordered table-striped">';
+            var table_data = '<table id="coronaData" class="table table-bordered table-striped">';
 
             table_data += `
                     <tr>
@@ -15,12 +15,14 @@ $(document).ready(function(){
                     </tr>
             `
 
+            var totalCases = 0;
             for(i=0;i<Object.keys(results).length;i++){
                 var pro = results[i]["Province/State"] == undefined ? results[i]["Country/Region"] : results[i]["Province/State"];
                 var objLength = Number(Object.keys(results[i]).length);
                 var lastKey = Object.keys(results[i])[objLength-1];
                 var secondlastKey = Object.keys(results[i])[objLength-2];
                 //console.log(objLength);
+                totalCases += Number(results[i][lastKey]);
                 table_data += `<tr>
                     <td>${pro}</td>
                     <td>${results[i]["Country/Region"]}</td>
@@ -28,15 +30,18 @@ $(document).ready(function(){
                     <td>${results[i][lastKey] - results[i][secondlastKey]}</td>
                 </tr>`
             }
-            // console.log(results[0]);
 
              table_data += '</table>';
-
-           
+            
+            document.getElementById("totalCases").innerHTML = totalCases;
             $('#coronaTable').html(table_data);
         }
-
     });
+
+    $("#search").keyup(function(){
+        search_table($(this).val());
+    });
+    
 });
 
 function csvJSON(csv){
@@ -64,3 +69,19 @@ function csvJSON(csv){
     }
     return JSON.stringify(result); 
   }
+
+  function search_table(value){
+    $("#coronaData tr").each(function(){
+        var found = 'false';
+        $(this).each(function(){
+            if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0){
+                found = 'true';
+            }
+        });
+        if(found == 'true'){
+            $(this).show();
+        }else{
+            $(this).hide();
+        }
+    });
+}
