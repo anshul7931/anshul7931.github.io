@@ -19,18 +19,21 @@ $(document).ready(function(){
 
             var totalCases = 0;
             for(i=0;i<Object.keys(results).length;i++){
-                var pro = results[i]["Province/State"] == undefined ? results[i]["Country/Region"] : results[i]["Province/State"];
-                var objLength = Number(Object.keys(results[i]).length);
-                var lastKey = Object.keys(results[i])[objLength-1];
-                var secondlastKey = Object.keys(results[i])[objLength-2];
-                //console.log(objLength);
-                totalCases += Number(results[i][lastKey]);
-                table_data += `<tr>
-                    <td>${pro}</td>
-                    <td>${results[i]["Country/Region"]}</td>
-                    <td>${results[i][lastKey]}</td>
-                    <td>${results[i][lastKey] - results[i][secondlastKey]}</td>
-                </tr>`
+                var isDataDefined = results[i]["Country/Region"] == undefined ? false : true;
+                if(isDataDefined){ 
+                    var pro = results[i]["Province/State"] == undefined ? results[i]["Country/Region"] : results[i]["Province/State"];
+                    var objLength = Number(Object.keys(results[i]).length);
+                    var lastKey = Object.keys(results[i])[objLength-1];
+                    var secondlastKey = Object.keys(results[i])[objLength-2];
+
+                    totalCases += !isNaN(Number(results[i][lastKey])) ? Number(results[i][lastKey]) : 0;
+                    table_data += `<tr>
+                        <td>${pro}</td>
+                        <td>${results[i]["Country/Region"]}</td>
+                        <td>${results[i][lastKey]}</td>
+                        <td>${results[i][lastKey] - results[i][secondlastKey]}</td>
+                    </tr>`
+                }
             }
 
              table_data += '</table>';
