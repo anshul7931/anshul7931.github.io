@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="index.html" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="AddRecipe.html" role="tab" aria-controls="profile" aria-selected="false">Add Recipe</a>
+            </li>
+        </ul>
+
+
+        <div>
+            <h1 class="text-center h1">My Personal Cookery Book</h1>
+        </div>
+
+        <br/><br/>
+        
+        <div id = "container">
+
+            
+            <div class="row">
+                <div class="card text-white bg-warning mb-3" id="cursorOnHover" onclick="getCuisineAndOpenCuisinePage('Indian')">
+                    <div class="card-header">Indian Cuisine</div>
+                    <div class="card-body">
+                    <h5 class="card-title">Indian Cuisine</h5>
+                    <p class="card-text">Indian cuisine is recognized as the geographical attributes and diversity of sensational food, taste, variety and different cooking methods.</p>
+                    </div>
+                </div>
+            
+
+                <div class="card text-white bg-info mb-3"  id="cursorOnHover" onclick="getCuisineAndOpenCuisinePage('Italian')">
+                    <div class="card-header">Italian Cuisine</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Italian Cuisine</h5>
+                      <p class="card-text">Italian cuisine is extremely varied with culinary influences from Greek Roman, Germanic, Goth, Turkish and Arab civilization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            </br></br>
+            
+            <div class="row">
+                <div class="card text-white bg-success mb-3"  id="cursorOnHover" onclick="getCuisineAndOpenCuisinePage('Chinese')">
+                    <div class="card-header">Chinese Cuisine</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Chinese Cuisine</h5>
+                      <p class="card-text">Chinese cusine is an important part of Chinese culture which includes cusine originating from diverse regions of China.</p>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-primary mb-3" id="cursorOnHover" onclick="getCuisineAndOpenCuisinePage('Mexican')">
+                    <div class="card-header">Mexican Cuisine</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Mexican Cuisine</h5>
+                      <p class="card-text">Mexican cuisine is primarily a fusion of indigineous meso American cooking with Europian, especially Spanish elements.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
