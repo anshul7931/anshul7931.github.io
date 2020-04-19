@@ -190,7 +190,8 @@ function uploadFile() {
         var storageRef = firebase.storage().ref('/dishesImages/' + filename);
         //uploadTask = storageRef.put(fileReference);// Add Reference
         var image = img.src;
-        var uploadTask = storageRef.putString(image.split(',')[1], 'base64', {contentType:'image/jpeg'})
+        var imageToUpload = image.split(',')!=null ? image.split(',')[1] : image;
+        var uploadTask = storageRef.putString(imageToUpload, 'base64', {contentType:'image/jpeg'})
         // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
     // 2. Error observer, called on failure
