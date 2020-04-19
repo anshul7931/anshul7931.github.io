@@ -30,10 +30,11 @@ function writeData() {
 
 //Push all the data to firebase realtime database
 function pushReferenceToFirebase(downloadURL) {
-    firebase.database().ref("Recipe").push({
+    var dishType = document.getElementById("dishes").value;
+    firebase.database().ref("Recipe/"+dishType).push({
         name: document.getElementById("nameField").value,
         description: document.getElementById("descriptionField").value,
-        cuisine: document.getElementById("cuisines").value,
+        dish: dishType,
         image: downloadURL
     }, function (error) {
         hideSpinner();
@@ -49,8 +50,9 @@ function pushReferenceToFirebase(downloadURL) {
 }
 
 //Open cuisine page according to selected card from home page
-function getCuisineAndOpenCuisinePage(cuisine) {
-    window.location.href = 'cuisine.html?cuisine=' + cuisine;
+//Changed cuisine to multiple Indian types
+function getCuisineAndOpenCuisinePage(dish) {
+    window.location.href = 'dish.html?dish=' + dish;
 }
 
 
@@ -58,9 +60,9 @@ function getCuisineAndOpenCuisinePage(cuisine) {
 function extractURLAndFetchDataAccordingToCuisineName() {
     showSpinner();
     var url = window.location.href;
-    var cuisineName = url.split("?")[1].split("=")[1];
+    var dishType = url.split("?")[1].split("=")[1];
 
-    firebase.database().ref('/Recipe').once('value', function (snapshot) {
+    firebase.database().ref('/Recipe/'+dishType).once('value', function (snapshot) {
         var count = 0;
         snapshot.forEach(function (childSnapshot) {
             var childData = childSnapshot.val();
@@ -68,7 +70,7 @@ function extractURLAndFetchDataAccordingToCuisineName() {
             card.id = "DishDetails";
             card.className = "jumbotron card w-50";
 
-            if (childData['cuisine'] == cuisineName) {
+            if (childData['dish'] == dishType) {
 
                 var cardHeader = document.createElement("DIV");
                 cardHeader.className = "card-header";
@@ -135,23 +137,25 @@ function extractURLAndFetchDataAccordingToCuisineName() {
         });
         hideSpinner();
         if (count == 0) {
-            document.getElementById("noResultsFound").innerHTML = "No Results found for this cuisine";
+            document.getElementById("noResultsFound").innerHTML = "No Results found for this dish type";
         }
     });
 }
 
 //Delete Recipe
 function deleteRecipe(id) {
+    var url = window.location.href;
+    var dishType = url.split("?")[1].split("=")[1];
     if (getConfirmation() == true) {
-        firebase.database().ref('/Recipe/' + id).once('value', function (snapshot) {
+        firebase.database().ref('/Recipe/'+dishType+'/' + id).once('value', function (snapshot) {
             var imageURL = snapshot.val().image;
             var nameOfTheImageToBeDeleted = imageURL.split('?')[0].split('%2F')[1];
-            var storageRef = firebase.storage().ref('/dishesImages');
+            var storageRef = firebase.storage().ref('/dishesImages/'+dishType);
             storageRef.child(nameOfTheImageToBeDeleted).delete().then(function () {
-                firebase.database().ref('/Recipe/' + id).remove();
+                firebase.database().ref('/Recipe/' +dishType+'/' + id).remove();
                 location.reload(false);
             }).catch(function (error) {
-                firebase.database().ref('/Recipe/' + id).remove();
+                firebase.database().ref('/Recipe/' +dishType+'/' + id).remove();
                 location.reload(false);
             });
 
@@ -181,13 +185,14 @@ function compress(source_img_obj, quality, output_format, callback) {
 //Store image to storage and fetch image URL.Further call pushReferenceToFirebase method with imageURL as parameter
 function uploadFile() {
 
+    var dishType = document.getElementById("dishes").value;
     //var uploadTask = null;
     var fileReference = document.getElementById("fileName").files[0];
     compress(window.URL.createObjectURL(fileReference), 30, "jpeg", 
     function(img){
         var filename = Math.random().toString(36).slice(2).concat(fileReference.name);
 
-        var storageRef = firebase.storage().ref('/dishesImages/' + filename);
+        var storageRef = firebase.storage().ref('/dishesImages/'+dishType+'/' + filename);
         //uploadTask = storageRef.put(fileReference);// Add Reference
         var image = img.src;
         var imageToUpload = image.split(',')!=null ? image.split(',')[1] : image;
