@@ -55,8 +55,31 @@ function getCuisineAndOpenCuisinePage(dish) {
     window.location.href = 'dish.html?dish=' + dish;
 }
 
+//When a user logs in
+// firebase.auth().onAuthStateChanged(function(user){
+//     if(user){
+//         window.location.href = 'AddRecipe.html';
+//     }else{
+//         var pageUrl = window.location.href.split('/');
+//         if(pageUrl[pageUrl.length-1].includes("AddRecipe.html")){
+//             window.location.href = 'login.html';
+//         }
+//     }
+// });
+
 function onLogin(){
-    window.location.href = 'AddRecipe.html';
+    var usernamevalue = document.getElementById("username").value;
+    var passwordvalue = document.getElementById("password").value;
+    if(usernamevalue && passwordvalue){
+        firebase.auth().signInWithEmailAndPassword(usernamevalue, passwordvalue).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert("Some Error Occured")
+          });
+    }else{
+        alert("Please enter valid credentials");
+    }
 }
 
 
