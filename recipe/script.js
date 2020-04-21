@@ -55,6 +55,10 @@ function getCuisineAndOpenCuisinePage(dish) {
     window.location.href = 'dish.html?dish=' + dish;
 }
 
+function onLogin(){
+    window.location.href = 'AddRecipe.html';
+}
+
 
 //Constructing cuisine card view
 function extractURLAndFetchDataAccordingToCuisineName() {
