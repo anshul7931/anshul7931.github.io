@@ -55,19 +55,7 @@ function getCuisineAndOpenCuisinePage(dish) {
     window.location.href = 'dish.html?dish=' + dish;
 }
 
-//When a user logs in
-firebase.auth().onAuthStateChanged(function(user){
-    if(user){
-        if(window.location.href.includes("login.html"))
-        window.location.href = 'AddRecipe.html';
-    }else{
-        var pageUrl = window.location.href.split('/');
-        if(pageUrl[pageUrl.length-1].includes("AddRecipe.html")){
-            window.location.href = 'login.html';
-        }
-    }
-});
-
+//On click of login button
 function onLogin(){
     var usernamevalue = document.getElementById("username").value;
     var passwordvalue = document.getElementById("password").value;
@@ -81,6 +69,23 @@ function onLogin(){
     }else{
         alert("Please enter valid credentials");
     }
+}
+
+function checkAuthState(){
+    //When a user logs in
+    firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+            if(window.location.href.includes("login.html")){
+                window.location.href = 'AddRecipe.html';
+            }
+        }else{
+            var pageUrl = window.location.href;
+            if(pageUrl.includes("AddRecipe.html")){
+                window.location.href = 'login.html';
+            }
+        }
+    });
+    hideSpinner();
 }
 
 
