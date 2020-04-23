@@ -23,11 +23,13 @@
 }
 
 #DishName{
+    text-align: center;
+    font-size: x-large;
     color: darkcyan;
 }
 
 #DishDescription{
-    display: none;
+    /* display: none; */
     overflow-x: hidden;
     color:black;
 }
@@ -117,11 +119,22 @@ div#overlayCard > div#cross{
     visibility: hidden;
 }
 
-div#overlayCard > div.card-body > pre#DishDescription{
+#DishBody{
+    display: none;
+}
+
+div#overlayCard > div#DishBody{
     display: block;
+}
+
+div#overlayCard > div.card-header > h5#DishName{
+    text-align: left;
+    font-size: x-large;
+    color: darkcyan;
 }
 
 body{
     background-color: #f5f5f5;
 }
+
 

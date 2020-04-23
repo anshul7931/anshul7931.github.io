@@ -117,6 +117,7 @@ function extractURLAndFetchDataAccordingToCuisineName() {
 
                 var cardBody = document.createElement("DIV");
                 cardBody.className = "card-body";
+                cardBody.id = "DishBody";
 
                 var cross = document.createElement("DIV");
                 cross.id = "cross";
