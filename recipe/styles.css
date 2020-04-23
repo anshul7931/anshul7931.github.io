@@ -27,6 +27,7 @@
 }
 
 #DishDescription{
+    display: none;
     overflow-x: hidden;
     color:black;
 }
@@ -54,6 +55,7 @@
 
 
 #cross{
+    display: none;
     color:red;
     cursor: pointer; 
     font-weight: 600;
@@ -113,6 +115,10 @@ body {
 
 div#overlayCard > div#cross{
     visibility: hidden;
+}
+
+div#overlayCard > div.card-body > pre#DishDescription{
+    display: block;
 }
 
 body{
