@@ -60,7 +60,10 @@ function onLogin(){
     var usernamevalue = document.getElementById("username").value;
     var passwordvalue = document.getElementById("password").value;
     if(usernamevalue && passwordvalue){
-        firebase.auth().signInWithEmailAndPassword(usernamevalue, passwordvalue).catch(function(error) {
+        showSpinner();
+        firebase.auth().signInWithEmailAndPassword(usernamevalue, passwordvalue).then(function(){
+            window.location.href="AddRecipe.html";
+        }).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -71,18 +74,23 @@ function onLogin(){
     }
 }
 
+
 function checkAuthState(){
     //When a user logs in
     firebase.auth().onAuthStateChanged(function(user){
         if(user){
-            if(window.location.href.includes("login.html")){
                 window.location.href = 'AddRecipe.html';
-            }
         }else{
-            var pageUrl = window.location.href;
-            if(pageUrl.includes("AddRecipe.html")){
                 window.location.href = 'login.html';
-            }
+        }
+    });
+}
+
+function checkAuthStateOnLoginPage(){
+    //When a user logs in
+    firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+                window.location.href = 'AddRecipe.html';
         }
     });
     hideSpinner();
