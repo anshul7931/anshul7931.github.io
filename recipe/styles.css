@@ -57,7 +57,7 @@
 
 
 #cross{
-    display: none;
+    /* display: none; */
     color:red;
     cursor: pointer; 
     font-weight: 600;

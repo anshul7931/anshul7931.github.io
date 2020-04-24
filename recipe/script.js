@@ -140,6 +140,11 @@ function extractURLAndFetchDataAccordingToCuisineName() {
                 cross.id = "cross";
                 cross.setAttribute('align', 'right');
                 cross.textContent = 'X';
+                firebase.auth().onAuthStateChanged(function(user){
+                    if(!user){
+                            cross.style.display="none";
+                    }
+                });
 
                 //Dish Image
                 var imageContainer = document.createElement("DIV");
