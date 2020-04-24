@@ -96,6 +96,15 @@ function checkAuthStateOnLoginPage(){
     hideSpinner();
 }
 
+function checkAuthStateOnAddRecipePage(){
+    //When a user logs in
+    firebase.auth().onAuthStateChanged(function(user){
+        if(!user){
+                window.location.href = 'login.html';
+        }
+    });
+    hideSpinner();
+}
 
 //Constructing cuisine card view
 function extractURLAndFetchDataAccordingToCuisineName() {
