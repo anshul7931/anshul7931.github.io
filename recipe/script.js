@@ -142,7 +142,7 @@ function extractURLAndFetchDataAccordingToCuisineName() {
                 cross.textContent = 'X';
                 // firebase.auth().onAuthStateChanged(function(user){
                 //     if(!user){
-                            cross.style.display="none";
+                           // cross.style.display="none";
                 //     }
                 // });
 
@@ -205,7 +205,8 @@ function deleteRecipe(id) {
     if (getConfirmation() == true) {
         firebase.database().ref('/Recipe/'+dishType+'/' + id).once('value', function (snapshot) {
             var imageURL = snapshot.val().image;
-            var nameOfTheImageToBeDeleted = imageURL.split('?')[0].split('%2F')[1];
+            var paramArray = imageURL.split('?')[0].split('%2F');
+            var nameOfTheImageToBeDeleted = paramArray[paramArray.length - 1];
             var storageRef = firebase.storage().ref('/dishesImages/'+dishType);
             storageRef.child(nameOfTheImageToBeDeleted).delete().then(function () {
                 firebase.database().ref('/Recipe/' +dishType+'/' + id).remove();
