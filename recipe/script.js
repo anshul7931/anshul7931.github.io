@@ -118,7 +118,7 @@ function extractURLAndFetchDataAccordingToCuisineName() {
             var childData = childSnapshot.val();
             var card = document.createElement("DIV");
             card.id = "DishDetails";
-            card.className = "jumbotron card w-50";
+            card.className = "jumbotron card";
 
             if (childData['dish'] == dishType) {
 
