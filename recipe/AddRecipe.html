@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body onload="checkAuthStateOnAddRecipePage()">
+<body id="AddRecipeBody" onload="checkAuthStateOnAddRecipePage()">
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
@@ -34,49 +34,48 @@
     </div>
 
 
-    <br /><br />
+        <br /><br />
 
-<div id="addrecipe">
-        <h1 class="text-center border-light p-5">Recipes</h1>
-        <div class="d-flex justify-content-center h-100">
-            <div class="jumbotron col-md-6 shadow-lg p-5" style="height: fit-content;">
-                <form>
-                    <div class="form-group">
-                        <label for="dishName">Enter The Name of Dish:</label>
-                        <input type="text" class="form-control" placeholder="Name" id="nameField" required />
+        <div class="container" id="addrecipe">
+            <h1 class="text-center border-light p-5">Recipes</h1>
+            <div class="d-flex justify-content-center h-100">
+                <div class="jumbotron col-md-6 shadow-lg p-5" style="height: fit-content;">
+                    <form>
+                        <div class="form-group">
+                            <label for="dishName">Enter The Name of Dish:</label>
+                            <input type="text" class="form-control" placeholder="Name" id="nameField" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dish">Select Dish Type:</label>
+                            <select id="dishes" class="form-control">
+                                <option value="Beverages">Beverages</option>
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Snacks">Snacks/Starters</option>
+                                <option value="MainCourse">Main Course</option>
+                                <option value="Dessert">Dessert</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dishDescription">Enter The Recipe of Dish:</label>
+                            <textarea class="form-control" placeholder="Recipe Description" rows="7"
+                                id="descriptionField" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uploadImage">Upload Image</label></br>
+                            <input type="file" id="fileName" />
+
+                        </div>
+                    </form>
+
+                    <div class="text-center p-5">
+                        <button class="btn btn-primary btn-lg btn-block" onclick="writeData()">Submit</button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="dish">Select Dish Type:</label>
-                        <select id="dishes" class="form-control">
-                            <option value="Beverages">Beverages</option>
-                            <option value="Breakfast">Breakfast</option>
-                            <option value="Snacks">Snacks/Starters</option>
-                            <option value="MainCourse">Main Course</option>
-                            <option value="Dessert">Dessert</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dishDescription">Enter The Recipe of Dish:</label>
-                        <textarea class="form-control" placeholder="Recipe Description" rows="7" id="descriptionField"
-                            required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="uploadImage">Upload Image</label></br>
-                        <input type="file" id="fileName" />
-
-                    </div>
-                </form>
-
-                <div class="text-center p-5">
-                    <button class="btn btn-primary btn-lg btn-block" onclick="writeData()">Submit</button>
                 </div>
             </div>
         </div>
-    </div>
-
 </body>
 
 </html>
